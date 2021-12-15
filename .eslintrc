@@ -1,7 +1,16 @@
 {
+    // "overrides": [
+    //     {
+    //         "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
+    //         "parserOptions": {
+    //             "project": ["./tsconfig.json"] // Specify it only for TypeScript files
+    //         }
+    //     }
+    // ],
     "parser": "@typescript-eslint/parser",
     "extends": [
         "airbnb",
+        "airbnb-typescript",
         "plugin:prettier/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
@@ -11,9 +20,10 @@
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
-        }
+        },
+        "project": ["./tsconfig.json"]
     },
-    "rules": {at
+    "rules": {
         "prettier/prettier": ["error"],
         "react-hooks/exhaustive-deps": "warn",
         "react-hooks/rules-of-hooks": "error",
@@ -30,4 +40,11 @@
             }
         ]
     }
+    // "settings": {
+    //     "import/resolver": {
+    //         "node": {
+    //             "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    //         }
+    //     }
+    // }
 }
