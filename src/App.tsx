@@ -1,6 +1,9 @@
 import React from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Container from '@mui/material/Container';
+import Paper from '@mui/material/Paper';
+import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import './App.css';
 
@@ -19,8 +22,12 @@ function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Navbar />
-            <h1 className="text-3xl font-bold underline"> Hello world! </h1>
+            <Container maxWidth="md">
+                <Navbar />
+                <Paper elevation={1}>
+                    <Hero />
+                </Paper>
+            </Container>
         </ThemeProvider>
     );
 }
