@@ -1,12 +1,16 @@
 import React from 'react';
-import bgImg from '../assets/images/hero_bg.png';
 import './Hero.css';
 
 function Hero() {
     return (
-        <div className="Hero h-screen m-auto max-w-[1152px] pt-20">
-            <h1 className="text-3xl font-bold underline"> Hello world! </h1>
-            <img src={bgImg} alt="background" className="w-max block" />
+        <div className="hero h-screen m-auto max-w-[1152px] py-64 px-3 sm:px-10 md:px-24 text-center border-b-2 border-white border-opacity-50 border-solid">
+            <div className="hero-content__wrapper p-1.5 bg-gray-700 bg-opacity-25">
+                <h1 className="hero__title text-3xl md:text-4xl">Hello, there. I&apos;m Andy</h1>
+                <p className="hero__subtitle text-md opacity-80">
+                    I&apos;m an American web developer living in Yokohama, Japan
+                </p>
+            </div>
+            {/* TODO: Contact me button goes here */}
         </div>
     );
 }

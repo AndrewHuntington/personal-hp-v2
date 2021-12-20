@@ -23,10 +23,21 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <Container maxWidth="md">
-                <Navbar />
-                <Paper elevation={1}>
-                    <Hero />
-                </Paper>
+                <header>
+                    <Navbar />
+                    <Paper elevation={1}>
+                        <Hero />
+                    </Paper>
+                </header>
+                <main>
+                    <section>
+                        <h1>Gallery</h1>
+                    </section>
+                    <section>
+                        <h1>Contact</h1>
+                    </section>
+                </main>
+                <footer>{/* footer here */}</footer>
             </Container>
         </ThemeProvider>
     );

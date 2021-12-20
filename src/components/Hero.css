@@ -1,0 +1,14 @@
+.hero {
+    background: #222;
+}
+
+@supports (background-blend-mode: multiply) {
+    .hero {
+        background: url(../assets/images/hero_bg.png), radial-gradient(#999, #777);
+        background-size: cover;
+        background-blend-mode: multiply;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
