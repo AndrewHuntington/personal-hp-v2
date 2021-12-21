@@ -4,17 +4,14 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { deepPurple } from '@mui/material/colors';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
-// import images from '../resources/ts/images';
+import ActionButton from './ActionButton';
 
 interface Props {
     children: React.ReactElement;
@@ -49,11 +46,6 @@ function ResponsiveAppBar() {
             <AppBar position="fixed">
                 <Container maxWidth="lg">
                     <Toolbar disableGutters>
-                        {/* <Box sx={{ flexGrow: 0, paddingRight: '1rem' }}>
-                        <Tooltip title="Hi!">
-                            <Avatar alt="Andrew Huntington" src={images.myPic} />
-                        </Tooltip>
-                    </Box> */}
                         <Typography
                             variant="h6"
                             noWrap
@@ -109,18 +101,7 @@ function ResponsiveAppBar() {
                             >
                                 {pages.map((page) =>
                                     page === 'Contact' ? (
-                                        <MenuItem
-                                            key={page}
-                                            onClick={handleCloseNavMenu}
-                                            sx={{
-                                                backgroundColor: deepPurple[500],
-                                                transition: '0s background-color ease-out',
-                                                '&:hover': {
-                                                    backgroundColor: 'rgba(104, 58, 183, 0.65)',
-                                                    transitionDelay: '0.1s',
-                                                },
-                                            }}
-                                        >
+                                        <MenuItem key={page} onClick={handleCloseNavMenu}>
                                             <Typography textAlign="center">{page}</Typography>
                                         </MenuItem>
                                     ) : (
@@ -140,25 +121,18 @@ function ResponsiveAppBar() {
                         >
                             {pages.map((page) =>
                                 page === 'Contact' ? (
-                                    <Button
+                                    <ActionButton
                                         key={page}
-                                        onClick={handleCloseNavMenu}
-                                        sx={{
+                                        clickAction={handleCloseNavMenu}
+                                        styles={{
                                             my: 2,
                                             mx: 2,
                                             px: 2.5,
                                             color: 'white',
                                             display: 'block',
-                                            backgroundColor: deepPurple[500],
-                                            transition: '0s background-color ease-out',
-                                            '&:hover': {
-                                                backgroundColor: 'rgba(104, 58, 183, 0.65)',
-                                                transitionDelay: '0.1s',
-                                            },
                                         }}
-                                    >
-                                        {page}
-                                    </Button>
+                                        content={page}
+                                    />
                                 ) : (
                                     <Button
                                         key={page}

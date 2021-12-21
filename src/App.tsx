@@ -1,24 +1,23 @@
 import React from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
+import { deepPurple } from '@mui/material/colors';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import './App.css';
 
 function App() {
-    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    let theme = createTheme({
+        palette: {
+            mode: 'dark',
+            primary: {
+                main: deepPurple[500],
+            },
+        },
+    });
 
-    const theme = React.useMemo(
-        () =>
-            createTheme({
-                palette: {
-                    mode: prefersDarkMode ? 'dark' : 'light',
-                },
-            }),
-        [prefersDarkMode]
-    );
+    theme = responsiveFontSizes(theme);
 
     return (
         <ThemeProvider theme={theme}>
