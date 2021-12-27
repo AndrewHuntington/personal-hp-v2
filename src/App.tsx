@@ -3,8 +3,9 @@ import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/s
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import { deepPurple } from '@mui/material/colors';
-import Hero from './components/Hero';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Gallery from './components/Gallery';
 import './App.css';
 
 function App() {
@@ -24,13 +25,15 @@ function App() {
             <Container maxWidth="md">
                 <header>
                     <Navbar />
-                    <Paper elevation={1}>
+                    <Paper elevation={3}>
                         <Hero />
                     </Paper>
                 </header>
                 <main>
                     <section>
-                        <h1>Gallery</h1>
+                        <Paper elevation={3}>
+                            <Gallery />
+                        </Paper>
                     </section>
                     <section>
                         <h1>Contact</h1>
